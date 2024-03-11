@@ -1,42 +1,95 @@
-<?php
-$number = array(); // 추첨번호 배열 선언
-$room_number = array(); // 세대창고 번호 배열 선언
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>강서금호어울림퍼스티어 세대창고 랜덤 부여</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
   
-for($i=1; $i<=348;$i++) {
-	array_push($number,$i); // 추첨번호 1~348 number 변수에 push
-	array_push($room_number,$i); // 세대창고 번호 1~348 room_number 변수에 push
-}
-shuffle($room_number);	// 세대창고 배열 섞기
+</head>
 
-/*
-섞은 세대창고 번호표와 추첨번호표 엑셀 저장
-*/
+<body>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">강서금호어울림퍼스티어 <span>세대창고 부여</span></h2>
+                <p class="animate__animated animate__fadeInUp">공정하게 100% 무작위로 번호를 부여합니다.</p>
+				 <a href="https://github.com/Blockjinmoo/gangseokhapt" class="btn-get-started animate__animated animate__fadeInUp scrollto">소스코드 보기</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">랜덤 부여 방식</h2>
+                <p class="animate__animated animate__fadeIn">1~348의 숫자를 무작위로 섞어 배정받은 번호표순서대로 섞은 번호를 넣어주어, 엑셀로 추출 합니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">세대창고 추첨 시작합니다.</h2>
+                <p class="animate__animated animate__fadeInUp">아래 버튼을 누를때마다 번호는 새롭게 부여되오니, 시스템상 문제가 없는 한, 최초의 부여된 번호로 인정합니다.</p>
+                <a href="shuffle.php" class="btn-get-started animate__animated animate__fadeInUp scrollto">Start</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-double-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-double-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
 
 
-header( "Content-type: application/vnd.ms-excel; charset=utf-8");
-header( "Content-Disposition: attachment; filename = 추첨결과.xls" );
-header( "Content-Description: PHP4 Generated Data" );
-			?>
-            <table>
-			<thead>
-			<tr>
-			<th scope="col">번호표</th>
-			<th scope="col">계절창고번호</th>
-			</tr>
-			</thead>
-			<tbody>
-			<?php
-			for($i=0; $i<=348;$i++) {
-			?>
-			<tr>
-				<td><?=$number[$i]?></td>
-				<td><?=$room_number[$i]?></td>
-			</tr>
-			<?php
-			}
-			?>
-			</tr>
-			</tbody>
-			</table>
-	
-	
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
